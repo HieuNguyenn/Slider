@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <div class="slide">
+                <img src="https://www.w3schools.com/bootstrap/la.jpg?fbclid=IwAR16bGf1WvTWeI_ZzMUyau4HcMOHPnixLE5ncFijOEnfNsLNyW2eA-QJnxE"
+                    alt="">
+                <div class="text1">Los Angeles</div>
+                <div class="text2">LA is always so much fun!</div>
+            </div>
+            <div class="slide">
+                <img src="https://www.w3schools.com/bootstrap/chicago.jpg?fbclid=IwAR30nmK3refLbCqmKwUXZcYPu1gg6nmFnQkdpZmCcawwPvBTmSDYlgayit4"
+                    alt="">
+                <div class="text1">Chicago</div>
+                <div class="text2">Thank you, Chicago!</div>
+            </div>
+            <div class="slide">
+                <img src="https://www.w3schools.com/bootstrap/ny.jpg?fbclid=IwAR08HLWPjDWv3Dr_dFdPVddY_X2zXIIb4K382YUzOKu27UiMmZf4d62JA2w"
+                    alt="">
+                <div class="text1">New York</div>
+                <div class="text2">We love the Big Apple!</div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <a class="next" onclick="plusSlides(-1)">&#10095</a>
+        <a class="prev" onclick="plusSlides(1)">&#10094</a>
+    </div>
+    <div class="dsadsa" style="text-align: center; position: absolute; width: 100%;bottom: 10%;">
+        <button class="btn" onclick="showImage(1)"></button>
+        <button class="btn" onclick="showImage(2)"></button>
+        <button class="btn" onclick="showImage(3)"></button>
+    </div>
+    <script>
+        let index = 1;
+        slide(index);
+        function showImage(n) {
+            slide(index = n);
+        }
+        function plusSlides(n) {
+            slide(index += n);
+        }
+        function slide(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            if (n > slides.length) { index = 1 }
+            if (n < 1) { index = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[index - 1].style.display = "block";
+        }
+    </script>
+     <!-- <script>
+    
+        let index = 1;
+        showslide(index);
+        function next() {
+            index ++;
+            if(index > 3){
+                index = 0;
+            }
+            showslide(index);
+        }
+        function prev() {
+            index --;
+            if(index < 0){
+                index = 3;
+                return;
+            }
+            console.log(index);
+            showslide(index);
+        }
+        function showslide(n) {
+          let slides = document.getElementsByClassName("slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+              
+            }
+            slides[n].style.display = "block";
+           
+        }
+    </script> -->
+
+</body>
+
+</html>
